@@ -23,6 +23,7 @@ class Empregado {
 	  return t * salarioHora;
     }
 	
+	
 };
 
 #endif
