@@ -1,29 +1,31 @@
 #ifndef EMPREGADO_H
 #define EMPREGADO_H
+#define HORAS_MAXIMO 8
 
 #include <iostream>
 #include <string>
 
-class Empregado {
+class Empregado{
 	
+  private:
+    std::string nome;
+    double salarioHora;
+    double quotaMensalVendas;
+
   public:
-    double salarioHora;  
-    double quotaMensalVendas;  
+    Empregado(std::string _nome, double _salarioHora);
 
+    Empregado(std::string _nome, double _salarioHora, double _quotaMensalVendas);
 
-    double pagamentoMes(double horasTrabalhadas) {
- 
-      double t = horasTrabalhadas;
-	  
-	  //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
-      if (horasTrabalhadas > 8) {
-        double x = horasTrabalhadas - 8;
-        t += x / 2;
-      }
-	  return t * salarioHora;
-    }
-	
-	
+    double pagamentoMes(double horasTrabalhadas);
+    std::string getNome();
+    double getsalarioHora();
+    double getquotaMensalVendas();
+    
+    void setNome(std::string);
+    void setsalarioHora(double);
+    void setquotaMensalVendas(double);
+
 };
 
 #endif
